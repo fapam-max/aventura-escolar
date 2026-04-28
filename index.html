@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Aventura Escolar — Jogo educativo para o 4.º ano do ensino básico. Português, Matemática e Estudo do Meio.">
+  <meta name="author" content="Aventura Escolar">
+  <title>🌍 Aventura Escolar — 4.º Ano</title>
+
+  <!-- Favicon emoji via SVG -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌍</text></svg>">
+
+  <!-- Folha de estilos principal -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!--
+    ╔══════════════════════════════════════════════════════╗
+    ║          AVENTURA ESCOLAR — 4.º Ano                  ║
+    ║  Estrutura HTML principal (SPA — Single Page App)    ║
+    ╚══════════════════════════════════════════════════════╝
+  -->
+
+  <div id="root">
+
+    <!-- HUD persistente: avatar | nome | ⭐ estrelas | ❤️ vidas -->
+    <header id="hud" style="opacity:0; pointer-events:none" aria-label="Painel do jogador">
+      <!-- Conteúdo preenchido dinamicamente por ui.js → atualizarHUD() -->
+    </header>
+
+    <!-- Área principal onde os ecrãs são renderizados -->
+    <main id="app" role="main">
+      <!-- Os ecrãs são injetados aqui por ui.js → mostrarEcra() -->
+      <div class="loading-init">
+        <span class="loading-emoji">🌍</span>
+        <p>A carregar...</p>
+      </div>
+    </main>
+
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════
+       SCRIPTS — Ordem de carregamento IMPORTANTE:
+       1. data.js   → banco de questões e configuração
+       2. engine.js → motor do jogo (lógica pura)
+       3. ui.js     → renderização e interações
+       4. app.js    → ponto de entrada da aplicação
+       ═══════════════════════════════════════════════════════ -->
+
+  <!-- Banco de dados de questões -->
+  <script src="js/data.js"></script>
+
+  <!-- Motor de jogo -->
+  <script src="js/engine.js"></script>
+
+  <!-- Módulo de interface -->
+  <script src="js/ui.js"></script>
+
+  <!-- Inicialização da aplicação -->
+  <script src="js/app.js"></script>
+
+</body>
+</html>
